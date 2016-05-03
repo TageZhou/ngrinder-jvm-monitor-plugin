@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <unzip src="target/ngrinder-jvm-monitor-plugin-3.4.jar" dest="target/classes"/>
+</target>
+</project>
