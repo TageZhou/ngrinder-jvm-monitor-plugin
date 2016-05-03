@@ -48,7 +48,7 @@ public class JVMMonitor extends Plugin {
 	}
 
 	@Extension
-	public static class JVMMonitorExtension implements OnTestSamplingRunnable , Runnable {
+	public static class JVMMonitorExtension implements OnTestSamplingRunnable, Runnable {
 		@Autowired
 		private IConfig config;
 		@Autowired
@@ -61,11 +61,13 @@ public class JVMMonitor extends Plugin {
 		public JVMMonitorExtension() {
 		}
 
+		@Override
 		public void run() {
 			for (JVMMonitorClient each : this.clientMap.keySet())
 				each.update();
 		}
 
+		@Override
 		public void startSampling(final ISingleConsole singleConsole, PerfTest perfTest,
 			IPerfTestService perfTestService) {
 			final int jmxPort = getJmxPort(singleConsole.getGrinderProperties());
@@ -73,10 +75,10 @@ public class JVMMonitor extends Plugin {
 			Integer samplingInterval = perfTest.getSamplingInterval();
 			for (final String target : targetHostIP) {
 				this.scheduledTaskService.runAsync(new Runnable() {
+					@Override
 					public void run() {
 						JVMMonitor.LOGGER.info("Start JVM monitoring for IP:{}", target);
-						JVMMonitorClient client = new JVMMonitorClient(target,
-							jmxPort);
+						JVMMonitorClient client = new JVMMonitorClient(target, jmxPort);
 						client.init();
 						if (client.isConnected()) {
 							File testReportDir = singleConsole.getReportPath();
@@ -123,6 +125,7 @@ public class JVMMonitor extends Plugin {
 			return port;
 		}
 
+		@Override
 		public void sampling(ISingleConsole singleConsole, PerfTest perfTest,
 			IPerfTestService perfTestService, ImmutableStatisticsSet intervalStatistics,
 			ImmutableStatisticsSet cumulativeStatistics) {
@@ -139,6 +142,7 @@ public class JVMMonitor extends Plugin {
 				}
 		}
 
+		@Override
 		public void endSampling(ISingleConsole singleConsole, PerfTest perfTest,
 			IPerfTestService perfTestService) {
 			try {

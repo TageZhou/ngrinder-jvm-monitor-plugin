@@ -1,0 +1,8 @@
+.idea
+.settings
+META-INF
+.classpath
+.project
+.springBeans
+.build.properties
+ngrinder-jvm-monitor-plugin.iml
