@@ -14,11 +14,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * JVMMonitorClient class.
  *
- *
- *
- * @author JunHo Yoon
- * @since 3.3
+ * @author JunHo Yoon, Geunwoo Son
+ * @since 3.4
  */
 public class JVMMonitorClient implements Closeable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(JVMMonitorClient.class);

@@ -3,8 +3,8 @@ package org.ngrinder.network;
 /**
  * JVMInfo class.
  *
- * @author JunHo Yoon
- * @since 3.3
+ * @author JunHo Yoon, Geunwoo Son
+ * @since 3.4
  */
 public class JVMInfo {
 	private long minorGCCount;

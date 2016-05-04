@@ -33,11 +33,10 @@ import ro.fortsoft.pf4j.Plugin;
 import ro.fortsoft.pf4j.PluginWrapper;
 
 /**
- *
- *
- *
- * @author JunHo Yoon
- * @since 3.3
+ * OnTestSamplingRunnable implements class
+ * *
+ * @author JunHo Yoon, Geunwoo Son
+ * @since 3.4
  */
 
 public class JVMMonitor extends Plugin {
@@ -61,13 +60,11 @@ public class JVMMonitor extends Plugin {
 		public JVMMonitorExtension() {
 		}
 
-		@Override
 		public void run() {
 			for (JVMMonitorClient each : this.clientMap.keySet())
 				each.update();
 		}
 
-		@Override
 		public void startSampling(final ISingleConsole singleConsole, PerfTest perfTest,
 			IPerfTestService perfTestService) {
 			final int jmxPort = getJmxPort(singleConsole.getGrinderProperties());
@@ -75,7 +72,6 @@ public class JVMMonitor extends Plugin {
 			Integer samplingInterval = perfTest.getSamplingInterval();
 			for (final String target : targetHostIP) {
 				this.scheduledTaskService.runAsync(new Runnable() {
-					@Override
 					public void run() {
 						JVMMonitor.LOGGER.info("Start JVM monitoring for IP:{}", target);
 						JVMMonitorClient client = new JVMMonitorClient(target, jmxPort);
@@ -125,7 +121,6 @@ public class JVMMonitor extends Plugin {
 			return port;
 		}
 
-		@Override
 		public void sampling(ISingleConsole singleConsole, PerfTest perfTest,
 			IPerfTestService perfTestService, ImmutableStatisticsSet intervalStatistics,
 			ImmutableStatisticsSet cumulativeStatistics) {
@@ -142,7 +137,6 @@ public class JVMMonitor extends Plugin {
 				}
 		}
 
-		@Override
 		public void endSampling(ISingleConsole singleConsole, PerfTest perfTest,
 			IPerfTestService perfTestService) {
 			try {
