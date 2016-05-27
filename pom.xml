@@ -20,7 +20,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
-        <ngrinder.core.version>3.3</ngrinder.core.version>
+        <ngrinder.core.version>3.4</ngrinder.core.version>
         <plugin.id>ngrinder-jvm-monitor-plugin</plugin.id>
         <plugin.class>org.ngrinder.network.JVMMonitor</plugin.class>
         <plugin.version>4.0.0</plugin.version>
@@ -75,8 +75,8 @@
             <url>http://repo1.maven.org/maven2</url>
         </repository>
         <repository>
-            <id>nhnopensource.maven.repo</id>
-            <url>https://github.com/nhnopensource/nhnopensource.maven.repo/raw/master/releases</url>
+            <id>ngrinder.maven.repo</id>
+            <url>https://github.com/songeunwoo/ngrinder-jvm-monitor-plugin.git`</url>
         </repository>
     </repositories>
 
