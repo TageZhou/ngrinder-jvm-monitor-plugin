@@ -76,7 +76,7 @@
         </repository>
         <repository>
             <id>ngrinder.maven.repo</id>
-            <url>https://github.com/songeunwoo/ngrinder-jvm-monitor-plugin.git`</url>
+            <url>https://github.com/naver/ngrinder/raw/ngrinder.maven.repo/releases</url>
         </repository>
     </repositories>
 
