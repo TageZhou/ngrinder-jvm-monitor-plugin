@@ -65,6 +65,7 @@ public class JVMMonitor extends Plugin {
 				each.update();
 		}
 
+		@Override
 		public void startSampling(final ISingleConsole singleConsole, PerfTest perfTest,
 			IPerfTestService perfTestService) {
 			final int jmxPort = getJmxPort(singleConsole.getGrinderProperties());
@@ -121,6 +122,7 @@ public class JVMMonitor extends Plugin {
 			return port;
 		}
 
+		@Override
 		public void sampling(ISingleConsole singleConsole, PerfTest perfTest,
 			IPerfTestService perfTestService, ImmutableStatisticsSet intervalStatistics,
 			ImmutableStatisticsSet cumulativeStatistics) {
@@ -137,6 +139,7 @@ public class JVMMonitor extends Plugin {
 				}
 		}
 
+		@Override
 		public void endSampling(ISingleConsole singleConsole, PerfTest perfTest,
 			IPerfTestService perfTestService) {
 			try {
